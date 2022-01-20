@@ -11,7 +11,7 @@ In The project there are several options the player can do. If the grid is bigge
 ## Implementation
 A flow field consist of a grid, a cost field , an integration field and an flow field.
 Before implementing the Flow field, a grid is needed. The grid will exist out of different cells, which will store all the data of field.
-![This is an image](Images/mainGrid.png)
+![This is an image](Images/MainGrid.png)
 
 ### Cost Field
 The Cost field will generate all the cost of a cell. The cost of a path can go between 1-254. How higher the cost, how rougher the area. The cost 255 is used to represent a wall. 0 will be the destination. When the cost field is changed, the integration field and the flow field will need the recalculate their values.
