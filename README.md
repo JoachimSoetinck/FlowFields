@@ -27,6 +27,12 @@ The Integration field will calculate the best cost of all the cells to the desti
 Finally, for generating the flowfield. The grid takes all the result of the integration field and then tries to determine wich direction the agent should go. Each cell/node will look at its neighbors and compare their best cost. The direction that needs to be calculated, is that to the lowest best cost of one if the current cell/nodes neigbors.
 ![Grid](Images/FlowField.png)
 
+## Result
+The result of the project is a working flowfield. Where the player can add agents and send them to an destination. There are some bugs where the agents keep walking an the lines of the cells. But they will get to the end point.
+
+## Conclusion/Future Work
+
+
 ## Sources
 http://www.gameaipro.com/GameAIPro/GameAIPro_Chapter24_Efficient_Crowd_Simulation_for_Mobile_Games.pdf
 https://leifnode.com/2013/12/flow-field-pathfinding/
