@@ -55,7 +55,7 @@ public class ObstacleSpawner : MonoBehaviour
         Vector2Int gridSize = gridController.gridSize;
         float nodeRadius = gridController.cellRadius;
 
-        Vector2 maxSpawnPos = new Vector2(gridSize.x * nodeRadius * 2 + nodeRadius, gridSize.y * nodeRadius * 2 + nodeRadius);
+        Vector2 maxSpawnPos = new Vector2(gridSize.x * nodeRadius + nodeRadius, gridSize.y * nodeRadius + nodeRadius);
         GameObject newUnit = Instantiate(GrassPrefab, wordlPos, Quaternion.identity);
         newUnit.transform.parent = transform;
     }

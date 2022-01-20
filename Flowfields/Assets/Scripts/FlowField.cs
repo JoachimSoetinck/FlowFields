@@ -77,11 +77,11 @@ public class FlowField
 	public void CreateCostField()
     {
 
-		Vector3 cellHalfExtents = Vector3.one * cellRadius;
+		Vector3 halfCell = Vector3.one * cellRadius;
 		int terrainMask = LayerMask.GetMask("Wall", "Grass");
 		foreach (Cell curCell in grid)
 		{
-			Collider[] obstacles = Physics.OverlapBox(curCell.worldPos, cellHalfExtents, Quaternion.identity, terrainMask);
+			Collider[] obstacles = Physics.OverlapBox(curCell.worldPos, halfCell, Quaternion.identity, terrainMask);
 
 			foreach (Collider col in obstacles)
 			{
@@ -117,10 +117,14 @@ public class FlowField
 			List<Cell> curNeighbors = GetNeighborCells(curCell.gridIndex);
 			foreach (Cell curNeighbor in curNeighbors)
 			{
+				
 				if (curNeighbor.cost == byte.MaxValue) { continue; }
-				if (curNeighbor.cost + curCell.BestCost < curNeighbor.BestCost)
+
+				
+				int bestCost = curNeighbor.cost + curCell.BestCost;
+				if (bestCost < curNeighbor.BestCost)
 				{
-					curNeighbor.BestCost = (byte)(curNeighbor.cost + curCell.BestCost);
+					curNeighbor.BestCost = (byte)(bestCost);
 					cellsToCheck.Enqueue(curNeighbor);
 				}
 			}
@@ -157,8 +161,10 @@ public class FlowField
 	{
 		List<Cell> neighbors = new List<Cell>();
 
+		//checking all direction for neigbors
 		foreach (Vector2Int movementDirection in AllDirections)
 		{
+			//if cell exist in movemtnDirection ->neigbor exist
 			Cell newNeighbor = GetCellAtLocation(nodeIndex, movementDirection);
 			if (newNeighbor != null)
 			{
@@ -184,6 +190,7 @@ public class FlowField
 
 	public Cell GetCellFromWorldPos(Vector3 worldPos)
 	{
+		//finding which cell agent is standing
 		float gridLocationX = worldPos.x / (gridSize.x * cellDiameter);
 		float gridLocationY = worldPos.z / (gridSize.y * cellDiameter);
 
