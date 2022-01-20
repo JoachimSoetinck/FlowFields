@@ -10,11 +10,11 @@ In The project there are several options the player can do. If the grid is bigge
 
 ## Implementation
 A flow field consist of a grid, a cost field , an integration field and an flow field.
-Before implementing the Flow field, a grid is needed. The grid will exist out of different cells, which will store all the data of field.
+Before implementing the Flow field, a grid is needed. The grid will exist out of different cells, which will store all the data of field. The grid has already an grass spot and a wall placed on it.
 ![This is an image](Images/MainGrid.png)
 
 ### Cost Field
-The Cost field will generate all the cost of a cell. The cost of a path can go between 1-254. How higher the cost, how rougher the area. The cost 255 is used to represent a wall. 0 will be the destination. When the cost field is changed, the integration field and the flow field will need the recalculate their values.
+The Cost field will generate all the cost of a cell. The cost of a path can go between 1-254. How higher the cost, how rougher the area. The cost 255 is used to represent a wall. 0 will be the destination. When the cost field is changed, the integration field and the flow field will need the recalculate their values. To check if the cell has a higher cost. Each cell checks if there is collision with another object. If there is collision, it check wich layer the object has to determine the cost of the field.
 
 ### Integration Field
 The Integration field will calculate the best cost of all the cells to the destination. This calculation will start from the destination point and will then add visit all the neigbors. The modified Dijksta algorithms will be used to determine all the path distance to the target. (calculation of the best cost to the destination). The main differce with the normal Dijkstra algorithms is that for a flowfield, The algorithms starts at the destination node and there is no start point.
