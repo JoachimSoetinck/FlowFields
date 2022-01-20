@@ -28,7 +28,7 @@ public class AgentSpawner : MonoBehaviour
 		}
 		if (Input.GetKeyDown(KeyCode.R))
 		{
-			SpawnAgents();
+			DestroyAgents();
 		}
 
 	}
@@ -74,7 +74,7 @@ public class AgentSpawner : MonoBehaviour
 		}
 	}
 
-	private void DestroyUnits()
+	private void DestroyAgents()
 	{
 		foreach (GameObject agent in agents)
 		{
