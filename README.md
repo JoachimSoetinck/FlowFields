@@ -1,6 +1,7 @@
 # FlowFields
 ## The Project
 The Project consists out of a 2D Grid, where the player can spawn random agents. On the grid, the player will also be able to select an end target where the agents need to go. The agents will move according to the flow field grid. This flow flow field will be generated. The project will be made in Unity. 
+
 ![Project](flow.gif)
 
 ### Controls
