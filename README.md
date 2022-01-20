@@ -31,6 +31,7 @@ Finally, for generating the flowfield. The grid takes all the result of the inte
 The result of the project is a working flowfield. Where the player can add agents and send them to an destination. There are some bugs where the agents keep walking an the lines of the cells. But they will get to the end point.
 
 ## Conclusion/Future Work
+This project gave me a better insight on how to move a large number of players. For future work, the flowfield can be used in RTS games where the player need to move a many objects at once. Other things you could do is combining different kind of pathfinding algorithms and determine which one is the best to use.
 
 
 ## Sources
