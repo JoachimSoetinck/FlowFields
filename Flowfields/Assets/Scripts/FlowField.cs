@@ -197,8 +197,8 @@ public class FlowField
 		gridLocationX = Mathf.Clamp01(gridLocationX);
 		gridLocationY = Mathf.Clamp01(gridLocationY);
 
-		int x = Mathf.Clamp(Mathf.FloorToInt((gridSize.x) * gridLocationX), 0, gridSize.x - 1);
-		int y = Mathf.Clamp(Mathf.FloorToInt((gridSize.y) * gridLocationY), 0, gridSize.y - 1);
+		int x = Mathf.Clamp(Mathf.FloorToInt((gridSize.x) * gridLocationX), 0, gridSize.x);
+		int y = Mathf.Clamp(Mathf.FloorToInt((gridSize.y) * gridLocationY), 0, gridSize.y );
 		return grid[x, y];
 	}
 }

@@ -37,8 +37,6 @@ public class Cell
 		cost = 1;
 	}
 
-
-
 	public void IncreaseCost(int newCost)
     {
 		if (cost == byte.MaxValue) return;
